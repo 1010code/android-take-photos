@@ -44,6 +44,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode == CAMERA_PERM_CODE){
+            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                openCamera();
+            }else {
+                Toast.makeText(this, "Camera Permission is Required to Use camera.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
     private void openCamera() {
         Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(camera, CAMERA_REQUEST_CODE);
