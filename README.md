@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-## View
+## Layout
 
 ![](https://i.imgur.com/TmNCpD1.png)
 
